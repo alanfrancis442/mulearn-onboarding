@@ -3,6 +3,9 @@ import "./App.css";
 import NotFound from "./pages/notfound";
 import Layout from "./layouts";
 import Landing from "./pages/landing";
+import Questions from "./pages/questions";
+import Signup from "./pages/signup";
+import Signin from "./pages/signin";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,12 +18,24 @@ function App() {
       element: <NotFound />,
     },
     {
+      path: "/signup",
+      element: <Signup />,
+    },
+    {
+      path: "/signin",
+      element: <Signin />,
+    },
+    {
       path: "/",
+      element: <Landing />,
+    },
+    {
+      path: "/questions",
       element: <Layout />,
       children: [
         {
-          path: "/",
-          element: <Landing />,
+          path: "",
+          element: <Questions />,
         },
       ],
     },
