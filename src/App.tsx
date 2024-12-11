@@ -6,6 +6,7 @@ import Landing from "./pages/landing";
 import Questions from "./pages/questions";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
+import Completed from "./pages/completed";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
           element: <Questions />,
         },
       ],
+    },
+    {
+      path: "/completed",
+      element: <Completed />,
     },
     // {
     //   path: "/",
