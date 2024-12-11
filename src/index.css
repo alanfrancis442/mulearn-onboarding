@@ -69,3 +69,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('@/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
