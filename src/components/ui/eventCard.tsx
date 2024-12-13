@@ -22,7 +22,7 @@ const EventCard: React.FC<EventCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="w-[285px] px-[10px] py-4 bg-white rounded-2xl border border-[#949494] flex-shrink-0">
+    <div className="min-w-[285px] w-full flex-1 px-[10px] py-4 bg-white rounded-2xl border border-[#949494] flex-shrink-0">
       <img
         src={imageUrl}
         alt="Event"

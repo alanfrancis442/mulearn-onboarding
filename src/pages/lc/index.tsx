@@ -62,27 +62,14 @@ const LearnignCircle = () => {
     },
   ];
   return (
-    <div className="px-4 py-8 space-y-5 bg-white flex flex-col justify-between items-center overflow-hidden h-screen font-PlusJakartaSans">
-      <div>
-        <h1 className="text-2xl font-bold text-center ">Learning Circle</h1>
+    <div className="px-4 py-8 space-y-5 bg-white flex flex-col justify-between overflow-hidden min-h-screen font-PlusJakartaSans">
+      <div className="relative">
+
+        <h1 className="text-xl font-bold text-center ">Learning Circles</h1>
       </div>
       <div className="flex flex-col space-y-3 w-full">
-        <div className=" rounded-full border flex items-center p-4 gap-5 w-full">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21 21L17.5001 17.5M20 11.5C20 16.1944 16.1944 20 11.5 20C6.80558 20 3 16.1944 3 11.5C3 6.80558 6.80558 3 11.5 3C16.1944 3 20 6.80558 20 11.5Z"
-              stroke="#949494"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <div className=" rounded-full border flex items-center p-4 gap-2 w-full">
+          <SearchSVG />
           <input
             type="text"
             placeholder="Search for topics, skills, colleges, locations"
@@ -93,7 +80,7 @@ const LearnignCircle = () => {
           {interestsgroups.map((interest, index) => (
             <div
               key={index}
-              className="border text-nowrap p-2 px-4 rounded-full text-[#787878] text-base leading-none"
+              className="border text-nowrap p-2 px-4 rounded-full text-[#787878] text-sm leading-none"
             >
               {interest}
             </div>
@@ -101,8 +88,8 @@ const LearnignCircle = () => {
         </div>
       </div>
       <Button
-        size={"lg"}
-        className="rounded-full w-full p-8 font-normal font-PlusJakartaSans text-lg"
+        size={'lg'}
+        className="rounded-full w-full py-4 font-semibold"
         type="submit"
       >
         Create new learning circle
@@ -119,48 +106,37 @@ const LearnignCircle = () => {
           </div>
         </div>
       </div>
+      <div>
+        <h2 className="text-sm font-bold mb-3">
+          All Learning Circles
+        </h2>
+        <div className="flex flex-col gap-5 pb-4">
+          {events.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
 export default LearnignCircle;
-/*
-const EventCard: React.FC<EventCardProps> = ({
-  title,
-  location,
-  city,
-  participants,
-  imageUrl,
-}) => {
-  return (
-    <div className="max-w-sm w-[calc(95vw-20px)] p-3 py-5 bg-white rounded-2xl border border-[#949494]">
-      <div className="relative">
-        <img
-          src={imageUrl}
-          alt="Event"
-          className="w-[247px] h-16 object-cover rounded-lg"
-        />
-      </div>
-      <div className="pt-4 capitalize ">
-        <h2 className="font-bold">{title}</h2>
-        <p className="text-lg">College of Engineering Trivandrum</p>
-        <p className="mt-1 text-lg text-gray-500">
-          {location}, {city}
-        </p>
-        <div className="flex items-center mt-4">
-          <div className="flex -space-x-2">
-            {participants.slice(0, 3).map((participant, index) => (
-              <Avatar className="h-6 w-6" key={index}>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>{participant.name}</AvatarFallback>
-              </Avatar>
-            ))}
-          </div>
-          <span className="ml-2 text-base text-gray-600">
-            {participants.length} people you might know have joined
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};*/
+
+const SearchSVG = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m21 21-3.5-3.5m2.5-6a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0"
+      stroke="#949494"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
