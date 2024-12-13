@@ -8,6 +8,7 @@ import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import Completed from "./pages/completed";
 import Describe from "./pages/describe";
+import LearnignCircle from "./pages/lc";
 
 function App() {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
     {
       path: "/describe",
       element: <Describe />,
+    },
+    {
+      path: "/lc",
+      element: <LearnignCircle />,
     },
     // {
     //   path: "/",
