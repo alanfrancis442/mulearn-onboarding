@@ -1,4 +1,5 @@
 import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Participant {
   image: string;
@@ -21,31 +22,30 @@ const EventCard: React.FC<EventCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="max-w-sm p-4 bg-white rounded-lg shadow-md">
+    <div className="max-w-sm w-[calc(95vw-20px)] p-3 py-5 bg-white rounded-2xl border border-[#949494]">
       <div className="relative">
         <img
           src={imageUrl}
           alt="Event"
-          className="w-full h-48 object-cover rounded-t-lg"
+          className="w-full h-28 object-cover rounded-lg"
         />
       </div>
-      <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
-        <p className="mt-2 text-sm text-gray-500">
+      <div className="pt-4 capitalize">
+        <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
+        <p className="text-lg">college name</p>
+        <p className="mt-1 text-lg text-gray-500">
           {location}, {city}
         </p>
         <div className="flex items-center mt-4">
           <div className="flex -space-x-2">
             {participants.slice(0, 3).map((participant, index) => (
-              <img
-                key={index}
-                src={participant.image}
-                alt={participant.name}
-                className="w-8 h-8 border-2 border-white rounded-full"
-              />
+              <Avatar className="h-6 w-6" key={index}>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>{participant.name}</AvatarFallback>
+              </Avatar>
             ))}
           </div>
-          <span className="ml-2 text-sm text-gray-600">
+          <span className="ml-2 text-base text-gray-600">
             {participants.length} people you might know have joined
           </span>
         </div>
