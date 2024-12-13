@@ -7,6 +7,7 @@ import Questions from "./pages/questions";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import Completed from "./pages/completed";
+import Home from "@/pages/home";
 import Describe from "./pages/describe";
 import LearnignCircle from "./pages/lc";
 
@@ -46,6 +47,10 @@ function App() {
       path: "/completed",
       element: <Completed />,
     },
+    {
+      path: '/home',
+      element: <Home />
+    }
     {
       path: "/describe",
       element: <Describe />,
