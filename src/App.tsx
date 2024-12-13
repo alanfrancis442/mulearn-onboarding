@@ -7,6 +7,7 @@ import Questions from "./pages/questions";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import Completed from "./pages/completed";
+import Describe from "./pages/describe";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
     {
       path: "/completed",
       element: <Completed />,
+    },
+    {
+      path: "/describe",
+      element: <Describe />,
     },
     // {
     //   path: "/",

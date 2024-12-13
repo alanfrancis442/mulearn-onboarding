@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Outline from "@/components/ui/outline";
 import { useNavigate } from "react-router-dom";
+import Heading from "@/components/ui/heading";
 
 const Signin = () => {
   const formSchema = z.object({
@@ -42,16 +43,7 @@ const Signin = () => {
 
   return (
     <div className="px-4 py-16 bg-white flex flex-col justify-between items-center overflow-hidden h-screen">
-      <div className="relative mb-12">
-        <img
-          src="/common/planet.webp"
-          alt=""
-          height={50}
-          width={50}
-          className="absolute -top-6 -right-8"
-        />
-        <h1 className="font-PlusJakartaSans font-bold text-3xl">Signin</h1>
-      </div>
+      <Heading>Sign In</Heading>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
           <FormField
