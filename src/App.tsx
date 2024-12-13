@@ -8,6 +8,7 @@ import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import Completed from "./pages/completed";
 import Home from "@/pages/home";
+import Describe from "./pages/describe";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ function App() {
       path: '/home',
       element: <Home />
     }
+    {
+      path: "/describe",
+      element: <Describe />,
+    },
     // {
     //   path: "/",
     //   element: <BusinessLayout />,
