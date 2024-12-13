@@ -4,7 +4,7 @@ import { PointsGroup } from '@/components/points'
 const Home = () => {
     const [name, karma, avg_karma, rank] = ['Edwin', '24.56K', '2.59K', '14458']
     return (
-        <div className=' min-h-svh' >
+        <div className=' min-h-svh pb-4' >
             <div className="flex flex-col justify-end items-center text-center gap-2 p-6 text-white bg-gradient-to-b from-transparent to-[#3187F4] bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: `linear-gradient(181deg, rgba(49, 135, 244, 0.00) 53.37%, #3187F4 99.16%), url('/home.webp')`,

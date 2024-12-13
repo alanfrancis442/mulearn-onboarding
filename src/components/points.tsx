@@ -11,7 +11,11 @@ export const PointsGroup = ({ scores, className, ...props }: { scores: Score } &
         <div className={`flex items-center justify-center gap-2 ${className}`} {...props}>
             <Points label="Karma Points" >{scores.karma}</Points>
             <Points label="Avg Karma/Month" >{scores.avg_karma}</Points>
-            <Points label="Ranking" className=' text-[#0F993E]'>{scores.rank}</Points>
+            <Points label="Ranking" >
+                <div className="text-[#0F993E]">
+                    {scores.rank}
+                </div>
+            </Points>
         </div>
     )
 }
