@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Outline from "@/components/ui/outline";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const formSchema = z.object({
     email: z.string().email({
@@ -37,6 +38,8 @@ const Signup = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
+
+  const navigate = useNavigate();
 
   return (
     <div className="px-4 py-16 bg-white flex flex-col justify-between items-center overflow-hidden h-screen">
@@ -130,7 +133,10 @@ const Signup = () => {
           </Button>
           <p className=" mt-4 text-primary text-center">
             New to μlearn?
-            <a href="#" className="text-lg font-semibold">
+            <a
+              onClick={() => navigate("/signin")}
+              className="text-lg font-semibold"
+            >
               Sign In
             </a>
           </p>

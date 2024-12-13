@@ -1,9 +1,16 @@
 import useQuestionStore from "@/hooks/questionStore";
 import { cn } from "@/lib/utils";
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Layout = () => {
+  const navigate = useNavigate();
   const { currentQuestionIndex, questions } = useQuestionStore();
+  useEffect(() => {
+    if (currentQuestionIndex === questions.length - 1) {
+      navigate("/completed");
+    }
+  }, [currentQuestionIndex]);
 
   return (
     <div className="px-4 py-8 bg-white flex flex-col justify-between mb-16 h-screen overflow-hidden">
@@ -28,7 +35,10 @@ const Layout = () => {
       </div>
       <Outlet />
       <h5 className="text-primary font-semibold tracking-tight">
-        Feeling confident about myself. Skip quiz and signup
+        Feeling confident about myself. Skip quiz and{" "}
+        <span className="hover:underline" onClick={() => navigate("/signup")}>
+          signup
+        </span>
       </h5>
     </div>
   );

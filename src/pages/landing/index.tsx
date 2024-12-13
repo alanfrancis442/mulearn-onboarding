@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-primary h-screen flex flex-col gap-8 justify-between">
       <div className="text-white font-PlusJakartaSans p-8 font-medium">
@@ -35,12 +37,18 @@ const Landing = () => {
           </h3>
         </div>
         <div className="mt-16">
-          <Button className="w-full text-lg py-8 rounded-full px-28">
+          <Button
+            onClick={() => navigate("/questions")}
+            className="w-full text-lg py-8 rounded-full px-28"
+          >
             Discover Who You Are
           </Button>
           <p className="text-lg mt-4 text-primary">
             Already have an account?{" "}
-            <a href="#" className="text-xl font-semibold">
+            <a
+              onClick={() => navigate("/signin")}
+              className="text-xl font-semibold"
+            >
               Sign In
             </a>
           </p>
