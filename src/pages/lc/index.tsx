@@ -111,10 +111,12 @@ const LearnignCircle = () => {
         <h1 className="text-lg font-bold text-left w-full">
           Learning Circles with upcoming meets
         </h1>
-        <div className="flex gap-5 overflow-x-auto ">
-          {events.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
+        <div className="w-full overflow-x-auto no-scrollbar">
+          <div className="flex gap-5 pb-4 min-w-max">
+            {events.map((event, index) => (
+              <EventCard key={index} {...event} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -122,3 +124,43 @@ const LearnignCircle = () => {
 };
 
 export default LearnignCircle;
+/*
+const EventCard: React.FC<EventCardProps> = ({
+  title,
+  location,
+  city,
+  participants,
+  imageUrl,
+}) => {
+  return (
+    <div className="max-w-sm w-[calc(95vw-20px)] p-3 py-5 bg-white rounded-2xl border border-[#949494]">
+      <div className="relative">
+        <img
+          src={imageUrl}
+          alt="Event"
+          className="w-[247px] h-16 object-cover rounded-lg"
+        />
+      </div>
+      <div className="pt-4 capitalize ">
+        <h2 className="font-bold">{title}</h2>
+        <p className="text-lg">College of Engineering Trivandrum</p>
+        <p className="mt-1 text-lg text-gray-500">
+          {location}, {city}
+        </p>
+        <div className="flex items-center mt-4">
+          <div className="flex -space-x-2">
+            {participants.slice(0, 3).map((participant, index) => (
+              <Avatar className="h-6 w-6" key={index}>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>{participant.name}</AvatarFallback>
+              </Avatar>
+            ))}
+          </div>
+          <span className="ml-2 text-base text-gray-600">
+            {participants.length} people you might know have joined
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};*/
