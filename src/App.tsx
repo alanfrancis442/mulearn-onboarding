@@ -48,9 +48,9 @@ function App() {
       element: <Completed />,
     },
     {
-      path: '/home',
-      element: <Home />
-    }
+      path: "/home",
+      element: <Home />,
+    },
     {
       path: "/describe",
       element: <Describe />,
