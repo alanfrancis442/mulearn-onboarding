@@ -10,6 +10,7 @@ import Completed from "./pages/completed";
 import Home from "@/pages/home";
 import Describe from "./pages/describe";
 import LearnignCircle from "./pages/lc";
+import LcEvent from "./pages/lcEvent";
 
 function App() {
   const router = createBrowserRouter([
@@ -58,6 +59,10 @@ function App() {
     {
       path: "/lc",
       element: <LearnignCircle />,
+    },
+    {
+      path: "/lc/:id",
+      element: <LcEvent />,
     },
     // {
     //   path: "/",
