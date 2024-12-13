@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* ... */
+body {
+  font-family: 'PlusJakartaSans', sans-serif;
+}
 
 @layer base {
   :root {
@@ -65,6 +68,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
