@@ -10,6 +10,7 @@ interface MeetingCardProps {
   agendaLink: string;
   joinLink: string;
   avatarUrl: string;
+  viewAgenta?: () => void;
 }
 
 const MeetingCard: React.FC<MeetingCardProps> = ({
@@ -19,6 +20,7 @@ const MeetingCard: React.FC<MeetingCardProps> = ({
   agendaLink,
   joinLink,
   avatarUrl,
+  viewAgenta,
 }) => {
   return (
     <div className="flex items-center max-w-md w-full p-3 py-4 bg-[#F1F4FF] rounded-2xl border-[#949494] border shadow-none">
@@ -48,6 +50,7 @@ const MeetingCard: React.FC<MeetingCardProps> = ({
             size={"lg"}
             className="w-full rounded-full text-primary border-primary"
             variant={"outline"}
+            onClick={viewAgenta}
           >
             <a href={agendaLink}>View Agenda</a>
           </Button>
