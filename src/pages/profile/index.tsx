@@ -1,10 +1,13 @@
 import { PointsGroup } from "@/components/points";
-import { ChevronLeft, EditIcon, Info } from "lucide-react";
+import { ChevronLeft, EditIcon, Info, LogOut } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { TbCoins, TbLockOpen, TbTargetArrow } from "react-icons/tb";
 import { LuCircleCheckBig } from "react-icons/lu";
-import { IoIosNotificationsOutline } from "react-icons/io";
+import {
+  IoIosNotificationsOutline,
+  IoMdNotificationsOutline,
+} from "react-icons/io";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -51,8 +54,8 @@ const Profile = () => {
       <ColorBox
         className="mt-12"
         label="Log Out"
-        icon={<img src="path/to/logout-icon.svg" alt="Log Out" />}
-        color="bg-[iii#FFC6C6]"
+        icon={<LogOut className="text-[#fc5e5e]" />}
+        color="bg-[#FFC6C6]"
       />
     </div>
   );
@@ -82,7 +85,7 @@ const ColorBox = ({
       >
         {icon}
       </div>
-      <div className="text-sm flex-1">{label}</div>
+      <div className=" flex-1 font-semibold">{label}</div>
       {children}
     </div>
   );
@@ -109,7 +112,7 @@ const items = [
   },
   {
     label: "Notifications",
-    icon: <IoIosNotificationsOutline size={21} className="text-[#88BFA3]" />, // Darker than bg-[#BBFFD6]
+    icon: <IoMdNotificationsOutline size={21} className="text-[#88BFA3]" />, // Darker than bg-[#BBFFD6]
     color: "bg-[#BBFFD6]",
   },
   {

@@ -68,7 +68,7 @@ const LcEvent = () => {
       <div className="flex flex-col items-center w-full space-y-4 text-primary font-semibold">
         <div className="flex justify-between items-center w-full">
           <span>View Peers in this learning circle</span>
-          <ChevronRight />
+          <ChevronRight onClick={() => navigate("/lc/pears/1")} />
         </div>
         <Button
           size={"lg"}
