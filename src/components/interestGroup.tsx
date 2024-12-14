@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Button, ButtonProps } from "./ui/button";
 
 const InterestGroupsData = [
@@ -19,6 +20,7 @@ export const InterestGroups = ({
 > & {
   buttonVariant?: ButtonProps["variant"];
 }) => {
+  const navigate = useNavigate();
   return (
     <div className={`flex flex-col gap-6 ${className}`} {...props}>
       <div className="text-sm font-semibold">Your Interest Groups</div>
@@ -31,7 +33,9 @@ export const InterestGroups = ({
       </div>
       <Button
         size={"lg"}
-        // variant={buttonVariant}
+        onClick={() => {
+          navigate("/ig");
+        }}
         variant={"outline"}
         className="rounded-full w-full p-6 font-PlusJakartaSans my-2 border-primary text-primary font-semibold"
         type="submit"

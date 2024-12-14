@@ -13,6 +13,7 @@ import LearnignCircle from "./pages/lc";
 import LcEvent from "./pages/lcEvent";
 import Profile from "./pages/profile";
 import LcPears from "./pages/lcPears";
+import IGPage from "./pages/igList";
 
 function App() {
   const router = createBrowserRouter([
@@ -73,6 +74,10 @@ function App() {
     {
       path: "/profile",
       element: <Profile />,
+    },
+    {
+      path: "/ig",
+      element: <IGPage />,
     },
     // {
     //   path: "/",
