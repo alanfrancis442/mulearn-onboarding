@@ -12,6 +12,7 @@ import Describe from "./pages/describe";
 import LearnignCircle from "./pages/lc";
 import LcEvent from "./pages/lcEvent";
 import Profile from "./pages/profile";
+import LcPears from "./pages/lcPears";
 
 function App() {
   const router = createBrowserRouter([
@@ -66,10 +67,13 @@ function App() {
       element: <LcEvent />,
     },
     {
+      path: "/lc/pears/:id",
+      element: <LcPears />,
+    },
+    {
       path: "/profile",
-      element: <Profile />
-
-    }
+      element: <Profile />,
+    },
     // {
     //   path: "/",
     //   element: <BusinessLayout />,
