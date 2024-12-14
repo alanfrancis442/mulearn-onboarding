@@ -15,8 +15,10 @@ import { Input } from "@/components/ui/input";
 import Outline from "@/components/ui/outline";
 import { useNavigate } from "react-router-dom";
 import Heading from "@/components/ui/heading";
+import { signup } from "./signup";
 const Signup = () => {
   const formSchema = z.object({
+    full_name: z.string(),
     email: z.string().email({
       message: "Please enter a valid email address",
     }),
@@ -38,6 +40,25 @@ const Signup = () => {
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    signup({
+      user: {
+        email: values.email,
+        password: values.password,
+        full_name: values.full_name,
+      },
+    }).then((res) => {
+      if (res.hasError) {
+        form.setError("email", {
+          message: res.message,
+        });
+        form.setError("password", {
+          message: res.message,
+        });
+      } else {
+        form.reset();
+        navigate("/home");
+      }
+    });
   }
 
   const navigate = useNavigate();
@@ -47,6 +68,28 @@ const Signup = () => {
       <Heading>Sign Up</Heading>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+          <FormField
+            control={form.control}
+            name="full_name"
+            render={({ field }) => (
+              <FormItem className="max-sm:w-[90vw]">
+                <FormLabel className="text-lg font-PlusJakartaSans font-semibold">
+                  Fullname
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    className="rounded-xl h-12"
+                    placeholder="Fullname"
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is your public display name.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="email"
@@ -63,7 +106,7 @@ const Signup = () => {
                   />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                  This is your public email address.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

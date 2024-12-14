@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getBaseUrl = () => {
-  return process.env.VITE_BACKEND_URL || "http://localhost:3000";
+  return import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 };
 
 export const createGateway = () => {

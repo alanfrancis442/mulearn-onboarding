@@ -15,10 +15,13 @@ import { Input } from "@/components/ui/input";
 import Outline from "@/components/ui/outline";
 import { useNavigate } from "react-router-dom";
 import Heading from "@/components/ui/heading";
+import { googleSignIn, signin } from "./services";
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Signin = () => {
+  const redirect = useNavigate();
   const formSchema = z.object({
-    email: z.string().email({
+    email: z.string().min(3, {
       message: "Please enter a valid email address",
     }),
     password: z.string().min(8, {
@@ -35,9 +38,48 @@ const Signin = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Add sign-in logic here
+    signin(values.email, values.password).then((res) => {
+      if (res.hasError) {
+        form.setError("email", {
+          message: res.message,
+        });
+        form.setError("password", {
+          message: res.message,
+        });
+      } else {
+        form.reset();
+        redirect("/home");
+      }
+    });
   }
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      googleSignIn(tokenResponse.access_token).then((res) => {
+        if (res.hasError) {
+          form.setError("email", {
+            message: res.message,
+          });
+          form.setError("password", {
+            message: res.message,
+          });
+        } else {
+          form.reset();
+          redirect("/home");
+        }
+      });
+    },
+    onError: (error) => {
+      console.error(error);
+      form.setError("email", {
+        message: "Something went wrong",
+      });
+    },
+  });
+
+  const googleAuthenticate = () => {
+    login();
+  };
 
   const navigate = useNavigate();
 
@@ -98,7 +140,7 @@ const Signin = () => {
             Sign In
           </Button>
           <p className="mt-4 text-primary text-center">
-            New to μlearn?
+            New to μlearn?{"  "}
             <a
               onClick={() => navigate("/signup")}
               className="text-lg font-semibold"
@@ -119,8 +161,11 @@ const Signin = () => {
           </span>
         </div>
       </Form>
-      <div className="flex flex-col justify-between items-center p-16 gap-5">
-        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ring-1">
+      <div className="flex flex-col justify-between items-center p-8 gap-5">
+        <Outline
+          onClick={() => googleAuthenticate()}
+          className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ring-1"
+        >
           <svg
             width="26"
             height="26"
@@ -163,7 +208,7 @@ const Signin = () => {
           </svg>
           Sign in with Google
         </Outline>
-        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ring-1">
+        {/* <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ring-1">
           <svg
             width="22"
             height="22"
@@ -189,7 +234,7 @@ const Signin = () => {
             </svg>
           </svg>
           Sign in with Facebook
-        </Outline>
+        </Outline> */}
       </div>
     </div>
   );

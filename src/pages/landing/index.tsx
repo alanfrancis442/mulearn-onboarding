@@ -41,8 +41,9 @@ const Landing = () => {
             size={"lg"}
             className="rounded-full w-full p-6 font-normal font-PlusJakartaSans my-2"
             type="submit"
+            onClick={() => navigate("/questions")}
           >
-            Sign In
+            Get Started
           </Button>
           <p className=" mt-4 text-primary">
             Already have an account?{" "}
