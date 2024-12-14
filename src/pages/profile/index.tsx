@@ -4,10 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { TbCoins, TbLockOpen, TbTargetArrow } from "react-icons/tb";
 import { LuCircleCheckBig } from "react-icons/lu";
-import {
-  IoIosNotificationsOutline,
-  IoMdNotificationsOutline,
-} from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Profile = () => {
   const navigate = useNavigate();

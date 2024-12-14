@@ -31,8 +31,9 @@ export const InterestGroups = ({
       </div>
       <Button
         size={"lg"}
-        variant={buttonVariant}
-        className="rounded-full w-full p-6 font-normal font-PlusJakartaSans my-2"
+        // variant={buttonVariant}
+        variant={"outline"}
+        className="rounded-full w-full p-6 font-PlusJakartaSans my-2 border-primary text-primary font-semibold"
         type="submit"
       >
         View All IGs
