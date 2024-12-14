@@ -43,7 +43,7 @@ const Landing = () => {
             type="submit"
             onClick={() => navigate("/questions")}
           >
-            Get Started
+            Discover Who You Are
           </Button>
           <p className=" mt-4 text-primary">
             Already have an account?{" "}

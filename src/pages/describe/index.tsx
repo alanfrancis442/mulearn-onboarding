@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const Describe = () => {
+  //creative &designer,maker,manager,
   const details = ["programming", "creative", "entrepreneur", "others"];
   const [selectedIndex, setselectedIndex] = useState<null | number>(null);
   return (
