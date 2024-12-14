@@ -13,7 +13,7 @@ const Layout = () => {
   }, [currentQuestionIndex]);
 
   return (
-    <div className="px-4 py-8 bg-white flex flex-col justify-between mb-16 h-screen overflow-hidden">
+    <div className="px-4 py-8 bg-white flex flex-col justify-between mb-16 h-dvh overflow-hidden">
       <div>
         <h4 className="text-primary font-bold tracking-tight leading-5">
           Lets bring out the true YOU <br />
@@ -34,7 +34,7 @@ const Layout = () => {
         </div>
       </div>
       <Outlet />
-      <h5 className="text-primary font-semibold tracking-tight">
+      <h5 className="text-primary font-semibold tracking-tight text-base">
         Feeling confident about myself. Skip quiz and{" "}
         <span className="hover:underline" onClick={() => navigate("/signup")}>
           signup

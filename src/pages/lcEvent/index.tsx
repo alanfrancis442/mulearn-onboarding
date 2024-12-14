@@ -3,10 +3,12 @@ import MeetingCard from "@/components/ui/meetingCard";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const LcEvent = () => {
   const [isAgendaVisible, setIsAgendaVisible] = useState(false);
 
+  const navigate = useNavigate();
   const meetings = [
     {
       id: 1,
@@ -56,9 +58,9 @@ const LcEvent = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-8 bg-white p-4 min-h-screen relative">
+    <div className="flex flex-col items-center gap-8 bg-white p-4 min-h-dvh relative">
       <div className="flex gap-3 items-center w-full">
-        <ChevronLeft />
+        <ChevronLeft onClick={() => navigate(-1)} />
         <span className="text-xl font-semibold">
           Digital Marketing Introduction
         </span>
@@ -70,7 +72,7 @@ const LcEvent = () => {
         </div>
         <Button
           size={"lg"}
-          className="rounded-full w-full py-5 px-8 font-semibold tracking-normal"
+          className="rounded-full w-full p-6 font-normal font-PlusJakartaSans my-2"
           type="submit"
         >
           Schedule a Meeting

@@ -7,7 +7,7 @@ type headingProps = {
 
 const Heading = ({ className, children }: headingProps) => {
   return (
-    <div className={cn("relative mb-12", className)}>
+    <div className={cn("relative mb-8", className)}>
       <img
         src="/common/planet.webp"
         alt=""

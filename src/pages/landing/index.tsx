@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Landing = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-primary h-screen flex flex-col gap-8 justify-between">
+    <div className="bg-primary h-dvh flex flex-col gap-8 justify-between">
       <div className="text-white font-PlusJakartaSans p-8 font-medium">
         <h3>Hey</h3>
         <h3>You still trying to figure out what μlearn </h3>
@@ -36,18 +36,19 @@ const Landing = () => {
             Unlock your full potential together.
           </h3>
         </div>
-        <div className="mt-16">
+        <div className="mt-16 w-full">
           <Button
-            onClick={() => navigate("/questions")}
-            className="w-full text-lg py-8 rounded-full px-28"
+            size={"lg"}
+            className="rounded-full w-full p-6 font-normal font-PlusJakartaSans my-2"
+            type="submit"
           >
-            Discover Who You Are
+            Sign In
           </Button>
-          <p className="text-lg mt-4 text-primary">
+          <p className=" mt-4 text-primary">
             Already have an account?{" "}
             <a
               onClick={() => navigate("/signin")}
-              className="text-xl font-semibold"
+              className="text-lg font-semibold"
             >
               Sign In
             </a>

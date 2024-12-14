@@ -8,7 +8,7 @@ const Describe = () => {
   const details = ["programming", "creative", "entrepreneur", "others"];
   const [selectedIndex, setselectedIndex] = useState<null | number>(null);
   return (
-    <div className="pt-12 h-screen flex flex-col justify-between items-center pb-4 px-4 ">
+    <div className="pt-12 h-dvh flex flex-col justify-between items-center pb-4 px-4 ">
       <Heading>Describe Yourself</Heading>
       <ul className="space-y-5 w-full">
         {details.map((option, index) => (
@@ -18,9 +18,9 @@ const Describe = () => {
                 setselectedIndex(index);
               }}
               className={cn(
-                "  capitalize shadow-none font-PlusJakartaSans p-5 rounded-2xl text-[rgba(120,120,120,1)] font-semibold border-[0.05px]  border-[rgba(0,0,0,1)] flex justify-start items-center gap-5",
+                "  capitalize shadow-none font-PlusJakartaSans p-5 ring-[1px] rounded-2xl ring-black text-[rgba(120,120,120,1)] font-semibold  flex justify-start items-center gap-5",
                 selectedIndex === index
-                  ? "border-primary border-2 text-black"
+                  ? "ring-primary ring-1 text-black"
                   : "border-[rgba(0,0,0,1)]"
               )}
             >

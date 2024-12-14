@@ -30,9 +30,9 @@ const Questions = () => {
                 setselectedIndex(index);
               }}
               className={cn(
-                "text-lg shadow-none font-PlusJakartaSans p-5 rounded-2xl text-[rgba(120,120,120,1)] font-semibold border-[0.05px]  border-[rgba(0,0,0,1)]",
+                "text-lg shadow-none font-PlusJakartaSans p-5 rounded-2xl text-[rgba(120,120,120,1)] ring-black ring-[0.5px] font-semibold ",
                 selectedIndex === index
-                  ? "border-primary border-2 text-black"
+                  ? "ring-primary ring-[1.5px] text-black"
                   : "border-[rgba(0,0,0,1)]"
               )}
             >

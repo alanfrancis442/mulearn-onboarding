@@ -43,7 +43,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-4 py-16 bg-white flex flex-col justify-between items-center overflow-hidden h-screen">
+    <div className="px-4 py-8 bg-white flex flex-col justify-between items-center overflow-hidden min-h-dvh">
       <Heading>Sign Up</Heading>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
@@ -146,7 +146,7 @@ const Signup = () => {
         </div>
       </Form>
       <div className="flex flex-col justify-between items-center p-16 gap-5">
-        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4">
+        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ring-1">
           <svg
             width="26"
             height="26"
@@ -181,7 +181,7 @@ const Signup = () => {
           </svg>
           Sign in with Google
         </Outline>
-        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4 ">
+        <Outline className="w-full font-PlusJakartaSans flex gap-3 rounded-full p-3 font-semibold px-4  ring-1">
           <svg
             width="22"
             height="22"

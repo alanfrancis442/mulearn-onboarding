@@ -67,7 +67,8 @@ const LearnignCircle = () => {
   return (
     <div className="px-4 py-8 space-y-5 bg-white flex flex-col justify-between overflow-hidden min-h-screen font-PlusJakartaSans">
       <div className="relative">
-        <ChevronLeft className="absolute top-1/2 left-0 -translate-y-1/2"
+        <ChevronLeft
+          className="absolute top-1/2 left-0 -translate-y-1/2"
           onClick={() => navigate(-1)}
         />
         <h1 className="text-xl font-bold text-center ">Learning Circles</h1>
@@ -93,12 +94,13 @@ const LearnignCircle = () => {
         </div>
       </div>
       <Button
-        size={'lg'}
-        className="rounded-full w-full py-4 font-semibold"
+        size={"lg"}
+        className="rounded-full w-full p-6 font-normal font-PlusJakartaSans my-2"
         type="submit"
       >
         Create new learning circle
       </Button>
+
       <div className="w-full flex flex-col justify-between items-start gap-5">
         <h1 className="text-lg font-bold text-left w-full">
           Learning Circles with upcoming meets
@@ -112,9 +114,7 @@ const LearnignCircle = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm font-bold mb-3">
-          All Learning Circles
-        </h2>
+        <h2 className="text-sm font-bold mb-3">All Learning Circles</h2>
         <div className="flex flex-col gap-5 pb-4">
           {events.map((event, index) => (
             <EventCard key={index} {...event} />
