@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import NotFound from "./pages/notfound";
-import Layout from "./layouts";
+import Layout from "./layouts/questions";
 import Landing from "./pages/landing";
 import Questions from "./pages/questions";
 import Signup from "./pages/signup";
@@ -14,6 +14,8 @@ import LcEvent from "./pages/lcEvent";
 import Profile from "./pages/profile";
 import LcPears from "./pages/lcPears";
 import IGPage from "./pages/igList";
+import Tips from "./pages/tips";
+import TipsLayout from "./layouts/tips";
 
 function App() {
   const router = createBrowserRouter([
@@ -78,6 +80,16 @@ function App() {
     {
       path: "/ig",
       element: <IGPage />,
+    },
+    {
+      path: "/tips",
+      element: <TipsLayout />,
+      children: [
+        {
+          path: "",
+          element: <Tips />,
+        },
+      ],
     },
     // {
     //   path: "/",
