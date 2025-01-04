@@ -1,6 +1,5 @@
-import { ChevronLeft } from "lucide-react";
+import PageHead from "@/components/ui/pageHead";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const IGPage = () => {
   // Dummy data for rendering interest groups
@@ -21,16 +20,16 @@ const IGPage = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("yourIGs");
-  const navigate = useNavigate();
   return (
     <div className="min-h-dvh bg-white text-black px-4 py-6 space-y-4">
-      <div className="relative">
+      {/* <div className="relative">
         <ChevronLeft
           className="absolute top-1/2 left-0 -translate-y-1/2"
           onClick={() => navigate(-1)}
         />
         <h1 className="text-xl font-bold text-center ">All Interest Groups</h1>
-      </div>
+      </div> */}
+      <PageHead title="All Interest Groups" />
 
       <div className="w-full border-b sticky top-0 z-10 bg-white pt-6">
         {/* Tabs Container */}

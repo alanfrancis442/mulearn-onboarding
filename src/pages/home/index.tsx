@@ -12,8 +12,11 @@ import {
   useSpring,
 } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [name, karma, avg_karma, rank] = ["Edwin", "24.56K", "2.59K", "14458"];
   const lcevents = [
     {
@@ -125,7 +128,10 @@ const Home = () => {
           <ChevronRight />
         </div>
         <hr className="h-[1px] bg-[#787878]" />
-        <div className="font-bold text-left w-full flex items-center justify-between gap-2 py-2">
+        <div
+          onClick={() => navigate("/opportunities")}
+          className="font-bold text-left w-full flex items-center justify-between gap-2 py-2"
+        >
           <div className="flex items-center gap-2">
             <img src="/opportunities.webp" alt="" />
             Opportunities

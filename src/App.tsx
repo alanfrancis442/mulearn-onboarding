@@ -16,6 +16,8 @@ import LcPears from "./pages/lcPears";
 import IGPage from "./pages/igList";
 import Tips from "./pages/tips";
 import TipsLayout from "./layouts/tips";
+import Opportunities from "./pages/opportunities";
+import Leaderboard from "./pages/leaderboard";
 
 function App() {
   const router = createBrowserRouter([
@@ -90,6 +92,14 @@ function App() {
           element: <Tips />,
         },
       ],
+    },
+    {
+      path: "/opportunities",
+      element: <Opportunities />,
+    },
+    {
+      path: "/leaderboard",
+      element: <Leaderboard />,
     },
     // {
     //   path: "/",
